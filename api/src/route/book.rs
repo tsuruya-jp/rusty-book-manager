@@ -1,4 +1,7 @@
-use axum::{routing::{get, post}, Router};
+use axum::{
+    routing::{get, post},
+    Router,
+};
 use registry::AppRegistry;
 
 use crate::handler::book::{register_book, show_book, show_book_list};

@@ -1,4 +1,7 @@
-use axum::{http::StatusCode, response::{IntoResponse, Response}};
+use axum::{
+    http::StatusCode,
+    response::{IntoResponse, Response},
+};
 use thiserror::Error;
 
 #[derive(Error, Debug)]
@@ -36,10 +39,10 @@ impl IntoResponse for AppError {
         let status_code = match self {
             AppError::UnprocessableEntity(_) => StatusCode::UNPROCESSABLE_ENTITY,
             AppError::EntityNotFound(_) => StatusCode::NOT_FOUND,
-            AppError::ValidationError(_)
-            | AppError::ConvertToUuidError(_) => StatusCode::BAD_REQUEST,
-            AppError::UnauthenticatedError
-            | AppError::ForbiddenOperation => StatusCode::FORBIDDEN,
+            AppError::ValidationError(_) | AppError::ConvertToUuidError(_) => {
+                StatusCode::BAD_REQUEST
+            }
+            AppError::UnauthenticatedError | AppError::ForbiddenOperation => StatusCode::FORBIDDEN,
             AppError::UnauthorizedError => StatusCode::UNAUTHORIZED,
             e @ (AppError::TransactionError(_)
             | AppError::SpecificOperationError(_)
