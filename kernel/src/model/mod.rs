@@ -3,3 +3,4 @@ pub mod book;
 pub mod id;
 pub mod user;
 pub mod role;
+pub mod list;
