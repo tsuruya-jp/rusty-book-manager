@@ -65,7 +65,7 @@ impl From<BookCheckoutRow> for Checkout {
         } = value;
         Self {
             checkout_id,
-            ckecked_out_by: CheckoutUser {
+            checked_out_by: CheckoutUser {
                 id: user_id,
                 name: user_name,
             },
