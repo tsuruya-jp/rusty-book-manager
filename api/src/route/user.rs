@@ -5,7 +5,8 @@ use axum::{
 use registry::AppRegistry;
 
 use crate::handler::user::{
-    change_password, change_role, delete_user, get_checkouts, get_current_user, list_users, register_user
+    change_password, change_role, delete_user, get_checkouts, get_current_user, list_users,
+    register_user,
 };
 
 pub fn build_user_router() -> Router<AppRegistry> {

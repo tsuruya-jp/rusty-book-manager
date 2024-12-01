@@ -2,8 +2,12 @@ use async_trait::async_trait;
 use shared::error::AppResult;
 
 use crate::model::{
-    book::{event::{CreateBook, DeleteBook, UpdateBook}, Book, BookListOptions},
-    id::{BookId, UserId}, list::PaginatedList,
+    book::{
+        event::{CreateBook, DeleteBook, UpdateBook},
+        Book, BookListOptions,
+    },
+    id::{BookId, UserId},
+    list::PaginatedList,
 };
 
 #[async_trait]

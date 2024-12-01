@@ -224,10 +224,10 @@ impl CheckoutRepository for CheckoutRepositoryImpl {
         .map(|rows| rows.into_iter().map(Checkout::from).collect())
         .map_err(AppError::SpecificOperationError)
     }
-    
+
     async fn find_history_by_book_id(&self, book_id: BookId) -> AppResult<Vec<Checkout>> {
         let checkout: Option<Checkout> = self.find_unreturned_by_book_id(book_id).await?;
-        
+
         let mut checkout_histories: Vec<Checkout> = sqlx::query_as!(
             ReturnedCheckoutRow,
             r#"
@@ -253,11 +253,11 @@ impl CheckoutRepository for CheckoutRepositoryImpl {
         .into_iter()
         .map(Checkout::from)
         .collect();
-        
+
         if let Some(co) = checkout {
             checkout_histories.insert(0, co);
         }
-        
+
         Ok(checkout_histories)
     }
 }

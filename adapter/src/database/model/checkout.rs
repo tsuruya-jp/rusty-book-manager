@@ -79,7 +79,7 @@ impl From<ReturnedCheckoutRow> for Checkout {
                 title,
                 author,
                 isbn,
-            }
+            },
         }
     }
 }

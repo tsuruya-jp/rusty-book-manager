@@ -158,9 +158,7 @@ impl UserRepository for UserRepositoryImpl {
         .map_err(AppError::SpecificOperationError)?;
 
         if res.rows_affected() < 1 {
-            return Err(AppError::EntityNotFound(
-                "Specified user not found".into()
-            ));
+            return Err(AppError::EntityNotFound("Specified user not found".into()));
         }
 
         Ok(())
@@ -179,9 +177,7 @@ impl UserRepository for UserRepositoryImpl {
         .map_err(AppError::SpecificOperationError)?;
 
         if res.rows_affected() < 1 {
-            return Err(AppError::EntityNotFound(
-                "Specified user not found".into()
-            ));
+            return Err(AppError::EntityNotFound("Specified user not found".into()));
         }
 
         Ok(())

@@ -1,6 +1,9 @@
 use chrono::{DateTime, Utc};
 
-use super::{id::{BookId, CheckoutId}, user::{BookOwner, CheckoutUser}};
+use super::{
+    id::{BookId, CheckoutId},
+    user::{BookOwner, CheckoutUser},
+};
 
 pub mod event;
 
