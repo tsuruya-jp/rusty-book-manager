@@ -168,7 +168,7 @@ impl CheckoutRepository for CheckoutRepositoryImpl {
 
         if res.rows_affected() < 1 {
             return Err(AppError::NoRowsAffectedError(
-                "No returning record has been updated".into(),
+                "No checkout record has been deleted".into(),
             ));
         }
 
